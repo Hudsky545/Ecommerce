@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500&family=Roboto:wght@300;500;900&display=swap');
+
+:root {
+    --Lex: Lexend;
+    --roboto: Roboto;
+}
+
+/*----------------------------------------------------
+------------------------------------------------------
+------------------------------------------------------
+------------------Mobile Version---------------------- */ 
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: whitesmoke;
+    min-height: 100vh;
+}
+
+#checks {
+    display: none;
+}
+.logo {
+    font-family: var(--Lex);
+    font-weight: 900; 
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+}
+.logo span {
+    color: red;
+}
+.home__a {
+    border-bottom: 2px solid red;
+}
+nav ul li a {
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: var(--roboto);
+    font-weight: 500;
+    color: black;
+}
+.sneaker {
+    position: relative;
+    overflow: hidden;
+}
+.subtitle h5 {
+    font-size: 1rem;
+    font-weight: lighter;
+    margin-bottom: 0.5rem;
+}
+.subtitle .prices {
+    font-weight: 500;
+    margin-top: 0.6rem;
+}
+.sneaker .subtitle {
+    margin-left: 20px;
+    width: 200px;
+    padding-left: 1rem;
+    
+}
+.sneakers {
+    border: 0.2px solid rgb(243, 240, 240);
+}
+.subtitle .type,
+.subtitle .color {
+    margin-bottom: 0.4rem;
+    color: rgb(149, 149, 149);
+}
+.relate {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem ;
+    border-radius: 25px;
+    background-color: #fff;
+}
+.grid {
+    padding-top: 6rem;
+    display: grid;
+}
+
+li a {
+    position: relative;
+    height: 100%;
+    color: black;
+    z-index: 1;
+    transition: all 0.3s;
+}
+ .large__screen li a::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    content: '';
+    background-color: red;
+    z-index: -1;
+    transition: all 0.3s;
+}
+
+nav .large__screen li a:hover::after {
+    width: 100%;
+}
+nav .large__screen li a:hover {
+    color: #fff;
+}
+.prices {
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    background-color: black;
+    color: #f1f1f1;
+    overflow: hidden;
+    display: inline-block;
+    padding: .5rem .7rem;
+
+}
+.sneakers {
+    transition: all 0.3s linear;
+}
+.sneaker {
+    transition: all .3s linear;
+}
+.sneakers:hover {
+    border: none;
+}
+.sneaker:hover{
+    transform: scale(1.1);
+    margin-bottom: 20px;
+    box-shadow: 10px 5px 5px rgba(216, 216, 216, 0.456);
+}
+
+
+
+/*-------------Media Query----------------*/
+
+@media screen and (max-width:600px) {
+    
+/*----------------Toggle-------------------*/
+#btn #btn__menu{
+    font-size: 1.3rem;
+    color: black;
+    top: 35px;
+    left: 30px;
+    position: fixed;
+    transition: all .8s;
+    cursor: pointer;
+}
+
+#checks:checked ~ #btn #btn__menu {
+    left: 150px;
+    opacity: 0;
+}
+#btn #btn__close {
+    font-size: 1.5rem;
+    color: rgb(255, 0, 0);
+    top: 6rem;
+    left: -10rem;
+    position: fixed;
+    z-index: 100;
+    transition: 0.4s;
+    cursor: pointer;
+}
+#checks:checked ~ #btn #btn__close {
+    left: 10rem;
+}
+#checks {
+    display: none;
+}
+/*----x------------Toggle----------------x---*/
+/*-----------------Sidebar-------------------*/
+.main {
+    position: fixed;
+    left: -14rem;
+    top: 5rem;
+    background: rgb(0, 0, 0);
+    width:14rem;
+    height: 100%;
+    color: #f8f1fe;
+    /*    padding: 1.2rem; */
+    border-top-right-radius: 10px;
+    transition: all 0.5s;
+    z-index: 25;
+}
+#checks:checked ~ .main {
+    left: 0;
+}
+#checks:checked ~ main {
+    padding-left: 11rem;
+} 
+.head__icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    margin-top: 2.5rem;
+    padding: 2rem 1rem;
+    
+    width:  10rem;
+}
+.head__icon i {
+    font-size: 1.8rem;
+}
+.head__icon .person {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.content_head h3{
+    font-weight: 900;
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding: 1rem 1.2rem;
+}
+
+.content__list ul li{
+    list-style: none;
+    padding: 1.2rem 1.5rem;
+    border-bottom: 2px solid rgb(37, 37, 37);
+    
+    
+}
+.content__list ul li a:hover {
+    padding-left: 1.3rem
+}
+.content__list ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+}
+.footer .icons{
+    position: fixed;
+    bottom: 0;
+    width: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+/*----x-------------Sidebar---------------x----*/
+
+
+
+
+
+
+
+/*----------------Navigation---------------*/
+nav {
+  
+    padding-top: 1.8rem;
+    padding-bottom: 1.8rem;
+    padding-left: 5rem;
+    z-index: -5;
+}
+.search {
+    display: none;
+}
+
+nav .right__icon i{
+    margin-right: 1.4rem;
+    font-size: 1.2rem;
+}
+
+.logo{
+    font-size: 1.4rem;
+}
+
+
+/*---x-------------Navigation------------x---*/
+
+
+
+
+/*------------------Main Section---------- */
+.grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    row-gap: 10px;
+    padding-top: 6rem;
+}
+.grid__section {
+    position: absolute;
+    top: 0;
+    left: 5rem;
+    z-index: -50;
+}
+.sneaker {
+    width: 250px;  
+}
+.sneakers {
+    width: 250px;
+}
+.large__screen {
+    display: none;
+}
+}
+
+@media screen and (min-width:601px) and (max-width:795px) {
+    nav {
+        max-height: 70px;
+        padding: 1.8rem 2rem;
+        z-index: 20;
+    }
+   
+      
+    nav ul li {
+        display: inline-block;
+        list-style: none;
+    }
+    nav ul li a {
+      margin-right: 1rem;
+      font-size: 1.1rem;
+      padding: 0.4rem ;
+    }
+    nav ul li i {
+       color: red;
+    padding-left: -1rem;
+    margin-left: -.7rem;
+    }
+    .logo {
+        font-size: 1.5rem;
+    }
+    label {
+        display: none;
+    }
+    .main{
+        display: none;
+    }
+    .search {
+        display: none;
+    }
+    .right__icon{
+        display: none;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        margin-left: 20px;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 6rem;
+        row-gap: 1rem;
+    }
+    .sneaker {
+        width: 300px;
+      overflow: hidden;
+        position: relative;
+    }
+    .sneakers {
+        width: 300px; 
+        border-radius: 5px;
+    }
+}
+
+@media screen and (max-width: 1060px) {
+    .search{
+      display: none;
+    }
+
+}
+@media screen and (min-width:796px) {
+    label {
+        display: none;
+    }
+    .main {
+        display: none;
+    }
+    .right__icon{
+        display: none;
+    }
+    .middle {
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+    }
+    nav {
+        padding: 1.8rem 2.5rem;
+        z-index: 50;
+    }
+    nav ul {
+      margin-left: 80px;
+    }
+    nav ul li{
+        display: inline-block;
+        margin-left: 1rem;
+    }
+    nav ul li a {
+        font-size: 1.1rem;
+        padding: 0.4rem ;
+    }
+    .search {
+        width: 300px;
+        height: 30px;
+        padding-right: 250px;
+        font-family: var(--roboto);
+    }
+    .search input {
+        width: 350px;
+        height: 30px;
+        outline: none;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: rgb(215, 215, 215);
+        border: none;
+        border-left: 4px solid red;
+        text-align: center;
+    }
+    .search input::placeholder {
+        color: rgb(255, 255, 255);
+        opacity: 0.5;
+    }
+    .logo {
+        font-size: 2rem;
+    }
+    .sneaker {
+        width: 320px;
+        overflow: hidden;
+        position: relative;
+    }
+    .sneakers {
+        width: 320px;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+        margin-left: 20px;
+        padding-left: 2rem;
+        padding-right: 0rem;
+        padding-top: 6rem;
+        row-gap: 1rem;
+    }
+}
